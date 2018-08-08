@@ -95,8 +95,7 @@ public class Utils {
 	 * 字节数组转int
 	 * 
 	 * @param 字节数组
-	 * @param offset
-	 *            偏移量
+	 * @param offset 偏移量
 	 * @return int
 	 */
 	public static int byteArrayToInt(byte[] b, int offset) {
@@ -157,7 +156,13 @@ public class Utils {
 		}
 	}
 
-
+	public static int bytes2UnsiginShort(byte high, byte low, boolean reverse) {
+		if (reverse) {
+			return ((high << 8) | low & 0xff) & 0xFFFF;
+		} else {
+			return ((low << 8) | high & 0xff) & 0xFFFF;
+		}
+	}
 
 	// public static long bytes2Long(byte[] high, byte[] low) {
 	//
@@ -172,8 +177,7 @@ public class Utils {
 
 	/**
 	 * 
-	 * @param date
-	 *            需要取各位的byte
+	 * @param date 需要取各位的byte
 	 * @return 以低高的顺序输出
 	 */
 	public static int[] getEachBit(byte date) {
