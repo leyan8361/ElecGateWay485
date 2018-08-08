@@ -8,7 +8,6 @@ import com.heshun.modbus.strategy.acrel.aem96.AEM96Strategy;
 import com.heshun.modbus.strategy.acrel.c.PZ96LE4CStrategy;
 import com.heshun.modbus.strategy.acrel.h.PZ96LE4HStrategy;
 import com.heshun.modbus.strategy.chnt.nzl.NZL308Strategy;
-import com.heshun.modbus.strategy.enertech.disd683.DISD683EConvert;
 import com.heshun.modbus.strategy.enertech.disd683.DISD683Strategy;
 import com.heshun.modbus.strategy.enertech.yh396e.YH396EStrategy;
 import com.heshun.modbus.strategy.enertech.yht2_tr.YHT2TRStrategy;
@@ -16,6 +15,9 @@ import com.heshun.modbus.strategy.eqa300.common.EQA300Strategy;
 import com.heshun.modbus.strategy.eqa300.h.EQA300HStrategy;
 import com.heshun.modbus.strategy.hy194e.HY194EStrategy;
 import com.heshun.modbus.strategy.pd204.e.PD204EStrategy;
+import com.heshun.modbus.strategy.tonli.acu.AcuvimStrategy;
+import com.heshun.modbus.strategy.tonli.pilot.SPM32Strategy;
+import com.heshun.modbus.strategy.tonli.temp.WTDLStrategy;
 
 public class DecodeStrategyFactory {
 
@@ -24,6 +26,15 @@ public class DecodeStrategyFactory {
 			return new DefaultUnPackStrategy(session, data);
 		}
 		switch (d.model.trim()) {
+		// 同力无线测温
+		case "WTDL":
+			return new WTDLStrategy(session, data);
+		// 同力爱博精电
+		case "Acuvim":
+			return new AcuvimStrategy(session, data);
+		// 同力派诺科技
+		case "spm32":
+			return new SPM32Strategy(session, data);
 		case "NZL308M":
 			return new NZL308Strategy(session, data);
 		case "aem96":
