@@ -64,8 +64,8 @@ public class SystemHelper {
 			if (Config.isDebug) {
 				fis = new FileInputStream(new File(String.format("src/main/resource/station_%s.cfg", logotype)));
 			} else {
-				fis = new FileInputStream(new File(SystemHelper.class.getResource(
-						String.format("/station_%s.cfg", logotype)).getPath()));
+				fis = new FileInputStream(
+						new File(SystemHelper.class.getResource(String.format("/station_%s.cfg", logotype)).getPath()));
 			}
 			byte[] buffer = new byte[fis.available()];
 
@@ -134,9 +134,8 @@ public class SystemHelper {
 			int feed_gap = _config.getIntValue("feed_back_delay_gap_s");
 			String version = _config.getString("version");
 			String logPath = _config.getString("log_path");
-			ELog.getInstance().log(
-					String.format("读取配置文件：\r\n%s \r\n 解析结果[%s,%s,%s,%s,%s]", str, _server, _port, sesing_gap,
-							request_gap, feed_gap));
+			ELog.getInstance().log(String.format("读取配置文件：\r\n%s \r\n 解析结果[%s,%s,%s,%s,%s]", str, _server, _port,
+					sesing_gap, request_gap, feed_gap));
 			Constants.SERVER_ = _server;
 			Constants.TCP_ACCEPTOR_PORT = _port;
 			Constants.COMMAND_TIME_GAP_IN_SESSION = request_gap;
