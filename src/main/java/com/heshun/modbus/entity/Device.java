@@ -35,6 +35,20 @@ public class Device {
 	private void genRequestPack(String type) {
 		requestPack = new ArrayList<byte[]>();
 		switch (type) {
+
+		case "WTDL":
+			requestPack.add(Utils.fetchRequest(vCpu, 3, 0, 4));
+			break;
+		case "Acuvim":
+			requestPack.add(Utils.fetchRequest(vCpu, 3, 0x105, 4));
+			requestPack.add(Utils.fetchRequest(vCpu, 3, 0x130, 30));
+			requestPack.add(Utils.fetchRequest(vCpu, 3, 0x156, 6));
+			break;
+		case "spm32":
+			requestPack.add(Utils.fetchRequest(vCpu, 3, 0, 21));
+			requestPack.add(Utils.fetchRequest(vCpu, 3, 21, 8));
+			requestPack.add(Utils.fetchRequest(vCpu, 3, 46, 5));
+			break;
 		case "NZL308M":
 			requestPack.add(Utils.fetchRequest(vCpu, 3, 0x01, 17));
 			requestPack.add(Utils.fetchRequest(vCpu, 3, 0x12, 13));
@@ -102,9 +116,8 @@ public class Device {
 	public void sendRequests(IoSession s) {
 		int i = 1;
 		for (byte[] command : requestPack) {
-			ELog.getInstance()
-					.log(String.format("发送查询[%s]，查询命令(%s)--->%s", SessionUtils.getLogoType(s), i++,
-							Arrays.toString(command)), s);
+			ELog.getInstance().log(String.format("发送查询[%s]，查询命令(%s)--->%s", SessionUtils.getLogoType(s), i++,
+					Arrays.toString(command)), s);
 			s.write(command);
 			try {
 				Thread.sleep(300);
