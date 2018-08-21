@@ -45,6 +45,7 @@ public class DecodeStrategyFactory {
 			return new com.heshun.modbus.strategy.pd194z._2.PD194ZStrategy(session, data);
 		case "yh396e":
 			return new YH396EStrategy(session, data);
+		// 爱能特
 		case "disd683":
 			return new DISD683Strategy(session, data);
 		case "eqa300":

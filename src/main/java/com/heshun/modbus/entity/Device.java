@@ -64,6 +64,11 @@ public class Device {
 			requestPack.add(Utils.fetchRequest(vCpu, 3, 0x2E, 6));
 
 			break;
+		case "disd683":
+			requestPack.add(Utils.fetchRequest(vCpu, 3, 14, 11));
+			requestPack.add(Utils.fetchRequest(vCpu, 3, 26, 17));
+			requestPack.add(Utils.fetchRequest(vCpu, 3, 54, 6));
+			break;
 		case "yh396e":
 			requestPack.add(Utils.fetchRequest(vCpu, 3, 14, 11));
 			requestPack.add(Utils.fetchRequest(vCpu, 3, 26, 17));
