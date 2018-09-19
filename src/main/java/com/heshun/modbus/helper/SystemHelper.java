@@ -87,7 +87,8 @@ public class SystemHelper {
 			ELog.getInstance().log(String.format("%s号站，设备总数：%s", logotype, devices.size()));
 			return devices;
 		} catch (NullPointerException e) {
-			ELog.getInstance().err("读取配置文件异常：" + e.getStackTrace().toString());
+			e.printStackTrace();
+			ELog.getInstance().err("读取配置文件异常：" + "===>" + logotype + e.getCause());
 			return null;
 		} finally {
 			if (null != fis)

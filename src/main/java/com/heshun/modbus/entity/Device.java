@@ -62,7 +62,10 @@ public class Device {
 			// requestPack.add(Utils.fetchRequest(vCpu, 3, 0x54, 6));
 			requestPack.add(Utils.fetchRequest(vCpu, 3, 0x06, 40));
 			requestPack.add(Utils.fetchRequest(vCpu, 3, 0x2E, 6));
-
+			break;
+		case "pd194z-2":
+			 requestPack.add(Utils.fetchRequest(vCpu, 3, 0x3D, 23));
+			 requestPack.add(Utils.fetchRequest(vCpu, 3, 0x54, 6));
 			break;
 		case "disd683":
 			requestPack.add(Utils.fetchRequest(vCpu, 3, 14, 11));
