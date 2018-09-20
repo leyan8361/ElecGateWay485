@@ -47,6 +47,18 @@ public class Utils {
 		return ByteUtils.byte8ToLong(bytes) & 0xFFFFFFFFl;
 	}
 
+	public static long byte4toLongR(byte[] bs) {
+		byte[] arr = new byte[8];
+		arr[4] = bs[2];
+		arr[5] = bs[3];
+		arr[6] = bs[0];
+		arr[7] = bs[1];
+
+		return (long) (((long) (arr[0] & 0xff) << 56) | ((long) (arr[1] & 0xff) << 48) | ((long) (arr[2] & 0xff) << 40)
+				| ((long) (arr[3] & 0xff) << 32) | ((long) (arr[4] & 0xff) << 24) | ((long) (arr[5] & 0xff) << 16)
+				| ((long) (arr[6] & 0xff) << 8) | ((long) (arr[7] & 0xff)));
+	}
+	
 	public static long byte4toLong(byte[] bs) {
 		byte[] arr = new byte[8];
 		arr[4] = bs[0];
