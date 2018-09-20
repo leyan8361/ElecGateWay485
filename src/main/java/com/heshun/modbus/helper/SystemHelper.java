@@ -56,6 +56,7 @@ public class SystemHelper {
 		minaAcceptor.bind(new InetSocketAddress(Constants.TCP_ACCEPTOR_PORT));
 
 	}
+	
 
 	public static HashMap<Integer, Device> loadDevicesByLogoType(int logotype) throws IOException {
 		FileInputStream fis = null;
