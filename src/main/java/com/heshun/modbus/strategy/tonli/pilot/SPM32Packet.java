@@ -7,52 +7,52 @@ public class SPM32Packet extends DefaultDevicePacket {
 	/*
 	 * 电压小数点标定
 	 */
-	public short _dpt;
+	public int _dpt;
 	/*
 	 * 电流小数点标定
 	 */
-	public short _dct;
+	public int _dct;
 	/*
 	 * 功率小数点标定
 	 */
-	public short _dqt;
+	public int _dqt;
 
-	public short _ua;
-	public short _ub;
-	public short _uc;
+	public int _ua;
+	public int _ub;
+	public int _uc;
 
-	public short _uab;
-	public short _ubc;
-	public short _uca;
+	public int _uab;
+	public int _ubc;
+	public int _uca;
 
-	public short _ia;
-	public short _ib;
-	public short _ic;
+	public int _ia;
+	public int _ib;
+	public int _ic;
 
 	// ADD
-	public short _freq;
+	public int _freq;
 
-	public short _pa;
-	public short _pb;
-	public short _pc;
+	public int _pa;
+	public int _pb;
+	public int _pc;
 	public long _ptotal;
 
 	// ADD
-	public short _qa;
-	public short _qb;
-	public short _qc;
+	public int _qa;
+	public int _qb;
+	public int _qc;
 	public long _qtotal;
 
 	// ADD
-	public short _sa;
-	public short _sb;
-	public short _sc;
+	public int _sa;
+	public int _sb;
+	public int _sc;
 	public long _stotal;
 
-	public short _pfa;
-	public short _pfb;
-	public short _pfc;
-	public short _pftotal;
+	public int _pfa;
+	public int _pfb;
+	public int _pfc;
+	public int _pftotal;
 
 	public long _epi;
 
@@ -67,63 +67,63 @@ public class SPM32Packet extends DefaultDevicePacket {
 	 * 以上字段用于存储原始报文信息,对于这些字段，只提供set方法
 	 */
 
-	public void set_dpt(short _dpt) {
+	public void set_dpt(int _dpt) {
 		this._dpt = _dpt;
 	}
 
-	public void set_dct(short _dct) {
+	public void set_dct(int _dct) {
 		this._dct = _dct;
 	}
 
-	public void set_dqt(short _dqt) {
+	public void set_dqt(int _dqt) {
 		this._dqt = _dqt;
 	}
 
-	public void set_ua(short _ua) {
+	public void set_ua(int _ua) {
 		this._ua = _ua;
 	}
 
-	public void set_ub(short _ub) {
+	public void set_ub(int _ub) {
 		this._ub = _ub;
 	}
 
-	public void set_uc(short _uc) {
+	public void set_uc(int _uc) {
 		this._uc = _uc;
 	}
 
-	public void set_uab(short _uab) {
+	public void set_uab(int _uab) {
 		this._uab = _uab;
 	}
 
-	public void set_ubc(short _ubc) {
+	public void set_ubc(int _ubc) {
 		this._ubc = _ubc;
 	}
 
-	public void set_uca(short _uca) {
+	public void set_uca(int _uca) {
 		this._uca = _uca;
 	}
 
-	public void set_ia(short _ia) {
+	public void set_ia(int _ia) {
 		this._ia = _ia;
 	}
 
-	public void set_ib(short _ib) {
+	public void set_ib(int _ib) {
 		this._ib = _ib;
 	}
 
-	public void set_ic(short _ic) {
+	public void set_ic(int _ic) {
 		this._ic = _ic;
 	}
 
-	public void set_pa(short _pa) {
+	public void set_pa(int _pa) {
 		this._pa = _pa;
 	}
 
-	public void set_pb(short _pb) {
+	public void set_pb(int _pb) {
 		this._pb = _pb;
 	}
 
-	public void set_pc(short _pc) {
+	public void set_pc(int _pc) {
 		this._pc = _pc;
 	}
 
@@ -131,36 +131,36 @@ public class SPM32Packet extends DefaultDevicePacket {
 		this._ptotal = _ptotal;
 	}
 
-	public void set_pfa(short _pfa) {
+	public void set_pfa(int _pfa) {
 		this._pfa = _pfa;
 	}
 
-	public void set_pfb(short _pfb) {
+	public void set_pfb(int _pfb) {
 		this._pfb = _pfb;
 	}
 
-	public void set_pfc(short _pfc) {
+	public void set_pfc(int _pfc) {
 		this._pfc = _pfc;
 	}
 
-	public void set_pftotal(short _pftotal) {
+	public void set_pftotal(int _pftotal) {
 		this._pftotal = _pftotal;
 	}
 
 	// ADD
-	public void set_freq(short _freq) {
+	public void set_freq(int _freq) {
 		this._freq = _freq;
 	}
 
-	public void set_qa(short _qa) {
+	public void set_qa(int _qa) {
 		this._qa = _qa;
 	}
 
-	public void set_qb(short _qb) {
+	public void set_qb(int _qb) {
 		this._qb = _qb;
 	}
 
-	public void set_qc(short _qc) {
+	public void set_qc(int _qc) {
 		this._qc = _qc;
 	}
 
@@ -168,15 +168,15 @@ public class SPM32Packet extends DefaultDevicePacket {
 		this._qtotal = _qtotal;
 	}
 
-	public void set_sa(short _sa) {
+	public void set_sa(int _sa) {
 		this._sa = _sa;
 	}
 
-	public void set_sb(short _sb) {
+	public void set_sb(int _sb) {
 		this._sb = _sb;
 	}
 
-	public void set_sc(short _sc) {
+	public void set_sc(int _sc) {
 		this._sc = _sc;
 	}
 
